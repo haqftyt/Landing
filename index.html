@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Portfolio</title>
+</head>
+<body>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <div class="header">
+        <nav>
+            <div class="Logo">
+                <h1 id="head">Portfolio</h1>
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Service</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="toggle-button">
+                <span id="btnText">Dark</span>
+                <img src="https://www.freeiconspng.com/thumbs/crescent-moon-png/black-crescent-moon-png-2.png" alt="" width="20px" height="20px" id="btnIcon">
+            </div>
+        </nav>
+    </div>
+    <div class="content">
+        <div>
+            <h1>I'm <span id="colorname">Faisal Haq</span></h1>
+        <p id="paratext">I am passionate and working hard to become a Software Developer 
+            in the IT industry
+        </p>
+        </div>
+        <div class="img-block">
+            <img src="/img/sun.png" alt="" width="60%" id="darkimage">
+        </div>
+    </div>
+    <script>
+        var tone=document.querySelector('.toggle-button');
+        var paratext=document.getElementById('paratext');
+        var btnIcon=document.getElementById('btnIcon');
+        var btnText=document.getElementById("btnText");
+        var darkimage=document.getElementById("darkimage");
+        var heading=document.getElementById('head');
+        tone.onclick= function (){
+            document.body.classList.toggle('dark-theme');
+            if(document.body.classList.contains('dark-theme')){
+                paratext.style.color="white";
+                btnIcon.src="https://www.freeiconspng.com/thumbs/crescent-moon-png/black-crescent-moon-png-2.png";
+                btnText.innerHTML="Light";
+                darkimage.src="/img/moon.png";
+                heading.style.color="white";
+            }
+            else{
+                paratext.style.color="black";
+                btnIcon.src="https://cdn-icons-png.flaticon.com/512/54/54241.png";
+                btnText.innerHTML="Dark";
+                darkimage.src="/img/sun.png";
+                heading.style.color="black";
+            }
+        }
+        var typed=new Typed(colorname,{
+            strings:['Faisal Haq','Developer','SQL Developer','C# Developer'],
+            typeSpeed:100,
+            backSpeed:50,
+            loop:true,
+            startDelay:10
+        });
+    </script>
+</body>
+</html>
